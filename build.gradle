@@ -1,0 +1,83 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name 'JitPack'
+            url 'https://jitpack.io'
+        }
+        maven { url = "https://maven.minecraftforge.net/" }
+    }
+    dependencies {
+        classpath "com.github.asbyth:ForgeGradle:6f53277"
+        classpath 'com.github.LxGaming:MixinGradle:d75e32e'//0.6-SNAPSHOT'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: "net.minecraftforge.gradle.forge"
+apply plugin: 'com.github.johnrengelman.shadow'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+version = "1.0"
+group= "xyz.weikuwu.cute"
+archivesBaseName = "weikowoAddons"
+String modid = "weikowoaddons"
+String mixinClassifier = "dep"
+compileJava.options.encoding = 'UTF-8'
+
+minecraft {
+    version = "1.8.9-11.15.1.2318-1.8.9"
+    runDir = "run"
+    mappings = "stable_22"
+}
+
+shadowJar {
+    dependencies {
+        include(dependency('commons-io:commons-io'))
+        include(dependency('org.apache.commons:commons-lang3'))
+    }
+
+    exclude 'module-info.class'
+    exclude 'dummyThing'
+    exclude 'LICENSE.txt'
+
+    classifier = mixinClassifier
+}
+
+reobf {
+    shadowJar {
+        mappingType = 'SEARGE'
+    }
+}
+
+build.dependsOn(shadowJar)
+runClient.dependsOn(build)
+
+processResources
+        {
+            inputs.property "version", project.version
+            inputs.property "mcversion", project.minecraft.version
+
+            from(sourceSets.main.resources.srcDirs) {
+                include 'mcmod.info'
+                expand 'version':project.version, 'mcversion':project.minecraft.version
+            }
+
+            from(sourceSets.main.resources.srcDirs) {
+                exclude 'mcmod.info'
+            }
+
+            rename '(.+_at.cfg)', 'META-INF/$1'
+        }
+
+task moveResources {
+    doLast {
+        ant.move file: "${buildDir}/resources/main",
+                todir: "${buildDir}/classes/java"
+    }
+}
+moveResources.dependsOn processResources
+classes.dependsOn moveResources

@@ -1,0 +1,15 @@
+[
+{
+  "modid": "weikowoaddons",
+  "name": "weikowoAddons",
+  "description": "weiku is so cute >w<",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "authorList": ["uwuWeiku"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
