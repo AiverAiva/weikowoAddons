@@ -1,8 +1,0 @@
-xyz/weikuwu/cute/uwuEventHandler.java
- xyz.weikuwu.cute.uwuEventHandler
-xyz/weikuwu/cute/weikowoAddons.java
- xyz.weikuwu.cute.weikowoAddons
-xyz/weikuwu/cute/config/Config.java
- xyz.weikuwu.cute.config.Config
-xyz/weikuwu/cute/modules/Extrastats.java
- xyz.weikuwu.cute.modules.Extrastats
