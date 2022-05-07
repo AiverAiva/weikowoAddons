@@ -33387,108 +33387,14 @@ RENAME MAP: param net/minecraft/world/storage/WorldInfo/WorldInfo (Lnet/minecraf
 RENAME MAP: param net/minecraft/world/storage/WorldInfo/WorldInfo (Lnet/minecraft/world/WorldSettings;Ljava/lang/String;)V 0 -> p_i2158_1_
 RENAME MAP: param net/minecraft/world/storage/WorldInfo/WorldInfo (Lnet/minecraft/world/WorldSettings;Ljava/lang/String;)V 1 -> p_i2158_2_
 RENAME MAP: param net/minecraft/world/storage/WorldInfo/WorldInfo (Lnet/minecraft/world/storage/WorldInfo;)V 0 -> p_i2159_1_
-Start Processing: xyz\weikuwu\cute\commands\Menu.java
-Warning: xyz\weikuwu\cute\commands\Menu.java has CRLF line endings; consider switching to LF
-Rename method net/minecraft/command/CommandBase/getRequiredPermissionLevel ()I[459,485]::getRequiredPermissionLevel->func_82362_a
-Rename method net/minecraft/command/ICommand/getCommandName ()Ljava/lang/String;[533,547]::getCommandName->func_71517_b
-Rename method net/minecraft/command/ICommand/getCommandUsage (Lnet/minecraft/command/ICommandSender;)Ljava/lang/String;[612,627]::getCommandUsage->func_71518_a
-Rename class net/minecraft/command/ICommandSender[625,639]::ICommandSender->ICommandSender
-Rename method net/minecraft/command/ICommand/processCommand (Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V[716,730]::processCommand->func_71515_b
-Rename class net/minecraft/command/ICommandSender[729,743]::ICommandSender->ICommandSender
-Rename class net/minecraft/command/CommandException[774,790]::CommandException->CommandException
-Rename method net/minecraft/command/ICommandSender/getName ()Ljava/lang/String;[822,829]::getName->func_70005_c_
-[method, java/util/concurrent/CompletableFuture/runAsync, (Ljava/lang/Runnable;)Ljava/util/concurrent/CompletableFuture;]
-Import: net.minecraft.client.Minecraft
-Import: net.minecraft.command.CommandBase
-Import: net.minecraft.command.CommandException
-Import: net.minecraft.command.ICommandSender
-Import: net.minecraft.util.ChatComponentText
-Adding 0 imports
-End  Processing: xyz\weikuwu\cute\commands\Menu.java
-
 Start Processing: xyz\weikuwu\cute\config\Config.java
 Warning: xyz\weikuwu\cute\config\Config.java has CRLF line endings; consider switching to LF
 End  Processing: xyz\weikuwu\cute\config\Config.java
 
-Start Processing: xyz\weikuwu\cute\modules\owoKicker.java
-Warning: xyz\weikuwu\cute\modules\owoKicker.java has CRLF line endings; consider switching to LF
-[method, xyz/weikuwu/cute/modules/owoKicker/onChat, (Lnet/minecraftforge/client/event/ClientChatReceivedEvent;)V]
-No rename for class net/minecraftforge/client/event/ClientChatReceivedEvent
-No rename for field net/minecraftforge/client/event/ClientChatReceivedEvent/message
-Rename method net/minecraft/util/IChatComponent/getUnformattedText ()Ljava/lang/String;[373,391]::getUnformattedText->func_150260_c
-[method, java/lang/String/contains, (Ljava/lang/CharSequence;)Z]
-No rename for field net/minecraftforge/client/event/ClientChatReceivedEvent/message
-Rename method net/minecraft/util/IChatComponent/getUnformattedText ()Ljava/lang/String;[475,493]::getUnformattedText->func_150260_c
-[method, java/lang/String/split, (Ljava/lang/String;)[Ljava/lang/String;]
-[method, java/lang/String/split, (Ljava/lang/String;)[Ljava/lang/String;]
-[method, java/lang/String/split, (Ljava/lang/String;)[Ljava/lang/String;]
-Rename class net/minecraft/client/Minecraft[637,646]::Minecraft->Minecraft
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[647,659]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/thePlayer[662,671]::thePlayer->field_71439_g
-Rename method net/minecraft/entity/player/EntityPlayer/addChatComponentMessage (Lnet/minecraft/util/IChatComponent;)V[676,699]::addChatComponentMessage->func_146105_b
-Rename class net/minecraft/util/ChatComponentText[694,711]::ChatComponentText->ChatComponentText
-Rename class net/minecraft/client/Minecraft[732,741]::Minecraft->Minecraft
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[742,754]::getMinecraft->func_71410_x
-Rename field net/minecraft/client/Minecraft/thePlayer[757,766]::thePlayer->field_71439_g
-Rename method net/minecraft/entity/player/EntityPlayer/addChatComponentMessage (Lnet/minecraft/util/IChatComponent;)V[771,794]::addChatComponentMessage->func_146105_b
-Rename class net/minecraft/util/ChatComponentText[789,806]::ChatComponentText->ChatComponentText
+Start Processing: xyz\weikuwu\cute\modules\Extrastats.java
+Warning: xyz\weikuwu\cute\modules\Extrastats.java has CRLF line endings; consider switching to LF
 Import: net.minecraft.client.Minecraft
 Import: net.minecraft.util.ChatComponentText
 Adding 0 imports
-End  Processing: xyz\weikuwu\cute\modules\owoKicker.java
-
-Start Processing: xyz\weikuwu\cute\utils\KeybindUtils.java
-Warning: xyz\weikuwu\cute\utils\KeybindUtils.java has CRLF line endings; consider switching to LF
-[method, xyz/weikuwu/cute/utils/KeybindUtils/setup, ()V]
-Rename class net/minecraft/client/Minecraft[297,306]::Minecraft->Minecraft
-[method, java/lang/Class/getDeclaredMethod, (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;]
-Rename class net/minecraft/client/Minecraft[484,493]::Minecraft->Minecraft
-[method, java/lang/Class/getDeclaredMethod, (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;]
-[method, java/lang/Throwable/printStackTrace, ()V]
-Rename class net/minecraft/client/Minecraft[743,752]::Minecraft->Minecraft
-[method, java/lang/Class/getDeclaredMethod, (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;]
-Rename class net/minecraft/client/Minecraft[940,949]::Minecraft->Minecraft
-[method, java/lang/Class/getDeclaredMethod, (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;]
-[method, java/lang/Throwable/printStackTrace, ()V]
-[method, java/lang/reflect/AccessibleObject/setAccessible, (Z)V]
-[method, java/lang/reflect/AccessibleObject/setAccessible, (Z)V]
-[method, xyz/weikuwu/cute/utils/KeybindUtils/leftClick, ()V]
-[method, java/lang/reflect/Method/invoke, (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;]
-Rename class net/minecraft/client/Minecraft[1480,1489]::Minecraft->Minecraft
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1490,1502]::getMinecraft->func_71410_x
-[method, java/lang/Throwable/printStackTrace, ()V]
-[method, xyz/weikuwu/cute/utils/KeybindUtils/rightClick, ()V]
-[method, java/lang/reflect/Method/invoke, (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;]
-Rename class net/minecraft/client/Minecraft[1868,1877]::Minecraft->Minecraft
-Rename method net/minecraft/client/Minecraft/getMinecraft ()Lnet/minecraft/client/Minecraft;[1878,1890]::getMinecraft->func_71410_x
-Import: net.minecraft.client.Minecraft
-Adding 0 imports
-End  Processing: xyz\weikuwu\cute\utils\KeybindUtils.java
-
-Start Processing: xyz\weikuwu\cute\uwuEventHandler.java
-Warning: xyz\weikuwu\cute\uwuEventHandler.java has CRLF line endings; consider switching to LF
-[method, xyz/weikuwu/cute/uwuEventHandler/onTick, (Lnet/minecraftforge/fml/common/gameevent/TickEvent$ClientTickEvent;)V]
-No rename for class net/minecraftforge/fml/common/gameevent/TickEvent/ClientTickEvent
-Adding 0 imports
-End  Processing: xyz\weikuwu\cute\uwuEventHandler.java
-
-Start Processing: xyz\weikuwu\cute\weikowoAddons.java
-Warning: xyz\weikuwu\cute\weikowoAddons.java has CRLF line endings; consider switching to LF
-[method, xyz/weikuwu/cute/weikowoAddons/preinit, (Lnet/minecraftforge/fml/common/event/FMLPreInitializationEvent;)V]
-No rename for class net/minecraftforge/fml/common/event/FMLPreInitializationEvent
-No rename for class net/minecraftforge/common/MinecraftForge
-No rename for field net/minecraftforge/common/MinecraftForge/EVENT_BUS
-[method, net/minecraftforge/fml/common/eventhandler/EventBus/register, (Ljava/lang/Object;)V]
-No rename for method net/minecraftforge/fml/common/eventhandler/EventBus/register (Ljava/lang/Object;)V
-No rename for class net/minecraftforge/common/MinecraftForge
-No rename for field net/minecraftforge/common/MinecraftForge/EVENT_BUS
-[method, net/minecraftforge/fml/common/eventhandler/EventBus/register, (Ljava/lang/Object;)V]
-No rename for method net/minecraftforge/fml/common/eventhandler/EventBus/register (Ljava/lang/Object;)V
-No rename for class net/minecraftforge/client/ClientCommandHandler
-No rename for field net/minecraftforge/client/ClientCommandHandler/instance
-Rename method net/minecraft/command/CommandHandler/registerCommand (Lnet/minecraft/command/ICommand;)Lnet/minecraft/command/ICommand;[1028,1043]::registerCommand->func_71560_a
-[method, xyz/weikuwu/cute/weikowoAddons/Start, ()V]
-[method, org/lwjgl/opengl/Display/setTitle, (Ljava/lang/String;)V]
-Adding 0 imports
-End  Processing: xyz\weikuwu\cute\weikowoAddons.java
+End  Processing: xyz\weikuwu\cute\modules\Extrastats.java
 

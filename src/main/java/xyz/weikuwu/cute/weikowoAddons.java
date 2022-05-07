@@ -1,12 +1,12 @@
 package xyz.weikuwu.cute;
 
-import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.lwjgl.opengl.Display;
-import xyz.weikuwu.cute.modules.owoKicker;
-import xyz.weikuwu.cute.commands.Menu;
+import xyz.weikuwu.cute.modules.ExtraStats;
+//import xyz.weikuwu.cute.modules.owoKicker;
+//import xyz.weikuwu.cute.commands.Menu;
 
 @Mod(modid="weikowoaddons", version="1.0",name="weikowoAddons", clientSideOnly=true, acceptedMinecraftVersions="1.8.9")
 
@@ -22,8 +22,9 @@ public class weikowoAddons {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new uwuEventHandler());
-        MinecraftForge.EVENT_BUS.register(new owoKicker());
-        ClientCommandHandler.instance.registerCommand(new Menu());
+        MinecraftForge.EVENT_BUS.register(new ExtraStats());
+//        MinecraftForge.EVENT_BUS.register(new owoKicker());
+//        ClientCommandHandler.instance.registerCommand(new Menu());
     }
 
     public void Start(){

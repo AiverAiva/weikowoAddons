@@ -1,12 +1,8 @@
 xyz/weikuwu/cute/uwuEventHandler.java
  xyz.weikuwu.cute.uwuEventHandler
-xyz/weikuwu/cute/commands/Menu.java
- xyz.weikuwu.cute.commands.Menu
 xyz/weikuwu/cute/weikowoAddons.java
  xyz.weikuwu.cute.weikowoAddons
 xyz/weikuwu/cute/config/Config.java
  xyz.weikuwu.cute.config.Config
-xyz/weikuwu/cute/utils/KeybindUtils.java
- xyz.weikuwu.cute.utils.KeybindUtils
-xyz/weikuwu/cute/modules/owoKicker.java
- xyz.weikuwu.cute.modules.owoKicker
+xyz/weikuwu/cute/modules/Extrastats.java
+ xyz.weikuwu.cute.modules.Extrastats
