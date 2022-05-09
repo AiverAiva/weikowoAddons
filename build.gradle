@@ -1,3 +1,4 @@
+
 buildscript {
     repositories {
         jcenter()
@@ -21,7 +22,7 @@ apply plugin: 'com.github.johnrengelman.shadow'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-version = "1.0"
+version = "0.1"
 group= "xyz.weikuwu.cute"
 archivesBaseName = "weikowoAddons"
 String modid = "weikowoaddons"
@@ -36,15 +37,15 @@ minecraft {
 
 shadowJar {
     dependencies {
-        include(dependency('commons-io:commons-io'))
-        include(dependency('org.apache.commons:commons-lang3'))
+//        include(dependency('org.spongepowered:mixin:0.7.11-SNAPSHOT'))
+        //include(dependency('com.google.code.gson:gson:2.9.0'))
     }
+
 
     exclude 'module-info.class'
     exclude 'dummyThing'
     exclude 'LICENSE.txt'
-
-    classifier = mixinClassifier
+    exclude '.gitignore'
 }
 
 reobf {
