@@ -1,12 +1,12 @@
 [
 {
-  "modid": "weikowoaddons",
+  "modid": "weikowoAddons",
   "name": "weikowoAddons",
-  "description": "weiku is so cute >w<",
+  "description": "weiku is cute???",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
-  "authorList": ["uwuWeiku"],
+  "url": "https://discord.gg/ZUQMy72YJG",
+  "authorList": ["AiverAiva#7269"],
   "credits": "",
   "logoFile": "",
   "screenshots": [],

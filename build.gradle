@@ -1,4 +1,3 @@
-
 buildscript {
     repositories {
         jcenter()
@@ -7,45 +6,98 @@ buildscript {
             url 'https://jitpack.io'
         }
         maven { url = "https://maven.minecraftforge.net/" }
+//        maven { url = "https://repo.spongepowered.org/maven" }
+        mavenCentral()
     }
     dependencies {
         classpath "com.github.asbyth:ForgeGradle:6f53277"
         classpath 'com.github.LxGaming:MixinGradle:d75e32e'//0.6-SNAPSHOT'
         classpath 'com.github.jengelman.gradle.plugins:shadow:6.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
     }
 }
 
 apply plugin: 'java'
 apply plugin: "net.minecraftforge.gradle.forge"
+//apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-version = "0.1"
+version = "1.0"
 group= "xyz.weikuwu.cute"
 archivesBaseName = "weikowoAddons"
 String modid = "weikowoaddons"
-String mixinClassifier = "dep"
 compileJava.options.encoding = 'UTF-8'
 
 minecraft {
     version = "1.8.9-11.15.1.2318-1.8.9"
     runDir = "run"
     mappings = "stable_22"
+    clientRunArgs += ["--tweakClass gg.essential.loader.stage0.EssentialSetupTweaker"]
+}
+
+configurations {
+    packageLib
+    configurations.implementation.extendsFrom(configurations.packageLib)
+}
+
+repositories {
+    maven { url 'https://repo.spongepowered.org/maven/' }
+    maven { url "https://repo.essential.gg/repository/maven-public" }
+    maven { url "https://repo.sk1er.club/repository/maven-public" }
+    maven { url "https://repo.sk1er.club/repository/maven-releases/" }
+    flatDir {
+        dirs 'deps'
+    }
+    mavenCentral()
+}
+
+dependencies {
+//    compile('com.google.code.gson:gson:2.9.0')
+//    compile('org.spongepowered:mixin:0.7.11-SNAPSHOT')
+//    annotationProcessor('org.spongepowered:mixin:0.7.11-SNAPSHOT')
+    //implementation("gg.essential:elementa-1.8.9-forge:476")
+    packageLib("gg.essential:loader-launchwrapper:1.1.1")
+    implementation("gg.essential:essential-1.8.9-forge:1498")
+//    implementation("gg.essential:vigilance-1.8.9-forge:218+pull-48")
+}
+
+/*mixin {
+    add sourceSets.main, "mixins.${modid}.refmap.json"
+}*/
+
+jar {
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest.attributes(
+            /*'Main-Class': 'NotSkyblockAddonsInstallerFrame',*/
+//            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
+//            'MixinConfigs': "mixins.${modid}.json",
+            'FMLCorePluginContainsFMLMod': true,
+            "ForceLoadAsMod": true,
+            //"FMLAT": 'notenoughupdates_at.cfg'
+            "TweakClass": "gg.essential.loader.stage0.EssentialSetupTweaker",
+    )
 }
 
 shadowJar {
+    archiveFileName = jar.archiveFileName
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    configurations = [project.configurations.packageLib]
     dependencies {
 //        include(dependency('org.spongepowered:mixin:0.7.11-SNAPSHOT'))
         //include(dependency('com.google.code.gson:gson:2.9.0'))
+//        include(dependency('gg.essential:vigilance-1.8.9-forge:218+pull-48'))
     }
 
 
     exclude 'module-info.class'
     exclude 'dummyThing'
     exclude 'LICENSE.txt'
-    exclude '.gitignore'
 }
 
 reobf {
@@ -76,8 +128,8 @@ processResources
 
 task moveResources {
     doLast {
-        ant.move file: "${buildDir}/resources/main",
-                todir: "${buildDir}/classes/java"
+        /*ant.move file: "${buildDir}/resources/main",
+                todir: "${buildDir}/classes/java"*/
     }
 }
 moveResources.dependsOn processResources
