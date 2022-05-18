@@ -18,6 +18,7 @@ public class Config extends Vigilant {
     public Config(File f){
         super(f);
     }
+    public String uuid = new String();
 
     //DungeonUtils
     @Property(
@@ -52,133 +53,133 @@ public class Config extends Vigilant {
         ChatLib.Send("/api new");
         Minecraft.getMinecraft().thePlayer.closeScreen();
     }
-
-    //owoKicker
-    @Property(
-            type = PropertyType.SWITCH,
-            name = "Enable Autokick",
-            category = "owoKicker - General",
-            subcategory = "General Settings"
-    )
-    public boolean autokick = false;
-
-    @Property(
-            type = PropertyType.SWITCH,
-            name = "Send Kick Reason in Party Chat",
-            description = "When enabled, when Autokick kicks someone, it will send the kick reason in party chat.",
-            category = "owoKicker - General",
-            subcategory = "General Settings"
-    )
-    public boolean kickreason = true;
-
-    @Property(
-            type = PropertyType.NUMBER,
-            name = "Secret Minimum",
-            description = "If someone's secret count is below this number, they will be kicked from the party automatically.",
-            category = "owoKicker - Personal",
-            subcategory = "Personal Stats",
-            min = 0,
-            max = 100000,
-            increment = 5000
-    )
-    int secretmin = 0;
-
-    @Property(
-            type = PropertyType.CHECKBOX,
-            name = "Floor 7 Check",
-            description = "Check if the user meet the requirment about f7 and the settings above.",
-            category = "owoKicker - Personal",
-            subcategory = "Personal Stats"
-    )
-    boolean Floor7Check = false;
-
-
-    @Property(
-            type = PropertyType.SELECTOR,
-            name = "Floor 7 S+ Checker",
-            description = "Check if the player are fast enough to join your party",
-            category = "owoKicker - Personal",
-            subcategory = "Personal Stats",
-            options = {"None", "4:00", "5:00", "6:00", "7:00"}
-
-    )
-    int Floor7SPlus = 0;
-
-    @Property(
-            type = PropertyType.CHECKBOX,
-            name = "Inventory Check",
-            description = "Kick if the player has their api disabled.",
-            category = "owoKicker - Personal",
-            subcategory = "Equipment"
-    )
-    boolean APICloseKicking = false;
-
-    @Property(
-            type = PropertyType.SWITCH,
-            name = "Require Necron Blade",
-            description = "When enabled, if someone does not have a necron blade (Hyperion/Valkyrie/Scylla/Astraea), they will be kicked from the party.",
-            category = "owoKicker - Personal",
-            subcategory = "Equipment"
-    )
-    boolean requireNecronBlade = false;
-
-    @Property(
-            type = PropertyType.SWITCH,
-            name = "Require Terminator",
-            description = "When enabled, if someone does not have a Terminator they will be kicked from the party.",
-            category = "owoKicker - Personal",
-            subcategory = "Equipment"
-    )
-    boolean requireTerminator = false;
-
-    @Property(
-            type = PropertyType.SWITCH,
-            name = "Require Terminator As Archer",
-            description = "When enabled, if someone is playing archer and does not have a terminator, they will be kicked from the party. Independent from the setting 'Require Terminator'.",
-            category = "owoKicker - Personal",
-            subcategory = "Equipment"
-    )
-    boolean requireTerminatorasArcher = false;
-
-    @Property(
-            type = PropertyType.CHECKBOX,
-            name = "Mage Allowed",
-            category = "owoKicker - Class",
-            subcategory = "Class"
-    )
-    boolean mageAllowed = false;
-
-    @Property(
-            type = PropertyType.CHECKBOX,
-            name = "Berserk Allowed",
-            category = "owoKicker - Class",
-            subcategory = "Class"
-    )
-    boolean berserkAllowed = false;
-
-    @Property(
-            type = PropertyType.CHECKBOX,
-            name = "Archer Allowed",
-            category = "owoKicker - Class",
-            subcategory = "Class"
-    )
-    boolean archerAllowed = false;
-
-    @Property(
-            type = PropertyType.CHECKBOX,
-            name = "Tank Allowed",
-            category = "owoKicker - Class",
-            subcategory = "Class"
-    )
-    boolean tankAllowed = false;
-
-    @Property(
-            type = PropertyType.CHECKBOX,
-            name = "Healer Allowed",
-            category = "owoKicker - Class",
-            subcategory = "Class"
-    )
-    boolean healerAllowed = false;
+//
+//    //owoKicker
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "Enable Autokick",
+//            category = "owoKicker - General",
+//            subcategory = "General Settings"
+//    )
+//    public boolean autokick = false;
+//
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "Send Kick Reason in Party Chat",
+//            description = "When enabled, when Autokick kicks someone, it will send the kick reason in party chat.",
+//            category = "owoKicker - General",
+//            subcategory = "General Settings"
+//    )
+//    public boolean kickreason = true;
+//
+//    @Property(
+//            type = PropertyType.NUMBER,
+//            name = "Secret Minimum",
+//            description = "If someone's secret count is below this number, they will be kicked from the party automatically.",
+//            category = "owoKicker - Personal",
+//            subcategory = "Personal Stats",
+//            min = 0,
+//            max = 100000,
+//            increment = 5000
+//    )
+//    int secretmin = 0;
+//
+//    @Property(
+//            type = PropertyType.CHECKBOX,
+//            name = "Floor 7 Check",
+//            description = "Check if the user meet the requirment about f7 and the settings above.",
+//            category = "owoKicker - Personal",
+//            subcategory = "Personal Stats"
+//    )
+//    boolean Floor7Check = false;
+//
+//
+//    @Property(
+//            type = PropertyType.SELECTOR,
+//            name = "Floor 7 S+ Checker",
+//            description = "Check if the player are fast enough to join your party",
+//            category = "owoKicker - Personal",
+//            subcategory = "Personal Stats",
+//            options = {"None", "4:00", "5:00", "6:00", "7:00"}
+//
+//    )
+//    int Floor7SPlus = 0;
+//
+//    @Property(
+//            type = PropertyType.CHECKBOX,
+//            name = "Inventory Check",
+//            description = "Kick if the player has their api disabled.",
+//            category = "owoKicker - Personal",
+//            subcategory = "Equipment"
+//    )
+//    boolean APICloseKicking = false;
+//
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "Require Necron Blade",
+//            description = "When enabled, if someone does not have a necron blade (Hyperion/Valkyrie/Scylla/Astraea), they will be kicked from the party.",
+//            category = "owoKicker - Personal",
+//            subcategory = "Equipment"
+//    )
+//    boolean requireNecronBlade = false;
+//
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "Require Terminator",
+//            description = "When enabled, if someone does not have a Terminator they will be kicked from the party.",
+//            category = "owoKicker - Personal",
+//            subcategory = "Equipment"
+//    )
+//    boolean requireTerminator = false;
+//
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "Require Terminator As Archer",
+//            description = "When enabled, if someone is playing archer and does not have a terminator, they will be kicked from the party. Independent from the setting 'Require Terminator'.",
+//            category = "owoKicker - Personal",
+//            subcategory = "Equipment"
+//    )
+//    boolean requireTerminatorasArcher = false;
+//
+//    @Property(
+//            type = PropertyType.CHECKBOX,
+//            name = "Mage Allowed",
+//            category = "owoKicker - Class",
+//            subcategory = "Class"
+//    )
+//    boolean mageAllowed = false;
+//
+//    @Property(
+//            type = PropertyType.CHECKBOX,
+//            name = "Berserk Allowed",
+//            category = "owoKicker - Class",
+//            subcategory = "Class"
+//    )
+//    boolean berserkAllowed = false;
+//
+//    @Property(
+//            type = PropertyType.CHECKBOX,
+//            name = "Archer Allowed",
+//            category = "owoKicker - Class",
+//            subcategory = "Class"
+//    )
+//    boolean archerAllowed = false;
+//
+//    @Property(
+//            type = PropertyType.CHECKBOX,
+//            name = "Tank Allowed",
+//            category = "owoKicker - Class",
+//            subcategory = "Class"
+//    )
+//    boolean tankAllowed = false;
+//
+//    @Property(
+//            type = PropertyType.CHECKBOX,
+//            name = "Healer Allowed",
+//            category = "owoKicker - Class",
+//            subcategory = "Class"
+//    )
+//    boolean healerAllowed = false;
 
     @Property(
             type = PropertyType.BUTTON,

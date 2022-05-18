@@ -1,17 +1,13 @@
 package xyz.weikuwu.cute.commands;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.command.CommandBase;
-import net.minecraft.command.CommandException;
-import net.minecraft.command.ICommand;
-import net.minecraft.command.ICommandSender;
-import net.minecraft.util.BlockPos;
-import org.jetbrains.annotations.NotNull;
+import net.minecraft.command.*;
 import xyz.weikuwu.cute.utils.ChatLib;
-import xyz.weikuwu.cute.utils.Requester;
 
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import java.io.*;
+import java.net.URL;
+import java.util.*;
+import java.util.concurrent.Executors;
 
 public class test extends CommandBase {
     @Override
@@ -32,10 +28,16 @@ public class test extends CommandBase {
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
         if(Minecraft.getMinecraft().theWorld == null || Minecraft.getMinecraft().thePlayer == null) return;
-        try {
-            ChatLib.Log(Requester.getUUID(Minecraft.getMinecraft().thePlayer.getName()));
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-        }
+        String ign = args.length > 0 ? args[0] : sender.getName();
+//        new Thread(() -> {
+//        }).start();
+
+        Executors.newSingleThreadExecutor().execute(() -> {
+            try {
+                ChatLib.Log(new BufferedReader(new InputStreamReader(new URL("https://api.mojang.com/users/profiles/minecraft/" + ign).openStream())).readLine());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }

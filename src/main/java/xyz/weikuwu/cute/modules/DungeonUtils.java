@@ -13,9 +13,9 @@ public class DungeonUtils {
             ChatLib.Send("/showextrastats");
         }
 
-        if(chat.message.getFormattedText().contains("§aYour new API key is")){
-            weikowoAddons.INSTANCE.config.APIKey = chat.message.getUnformattedText().split("\\s+")[5];
-            ChatLib.Log("Your API key has been set to §d" + weikowoAddons.INSTANCE.config.APIKey);
-        }
+//        if(chat.message.getFormattedText().contains("§aYour new API key is")){
+//            weikowoAddons.INSTANCE.config.APIKey = chat.message.getUnformattedText().split("\\s+")[5];
+//            ChatLib.Log("Your API key has been set to §d" + weikowoAddons.INSTANCE.config.APIKey);
+//        }
     }
 }

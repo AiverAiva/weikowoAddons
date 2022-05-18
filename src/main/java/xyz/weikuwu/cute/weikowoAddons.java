@@ -89,6 +89,7 @@ public class weikowoAddons implements ICommand {
 
         MinecraftForge.EVENT_BUS.register(new DungeonUtils());
         MinecraftForge.EVENT_BUS.register(new owoKicker());
+        MinecraftForge.EVENT_BUS.register(new uwuEventHandler());
 
         ClientCommandHandler.instance.registerCommand(new test());
 
