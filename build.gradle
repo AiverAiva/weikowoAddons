@@ -19,14 +19,14 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: "net.minecraftforge.gradle.forge"
-//apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-version = "1.0"
+version = "0.2"
 group= "xyz.weikuwu.cute"
 archivesBaseName = "weikowoAddons"
 String modid = "weikowoaddons"
@@ -36,7 +36,13 @@ minecraft {
     version = "1.8.9-11.15.1.2318-1.8.9"
     runDir = "run"
     mappings = "stable_22"
-    clientRunArgs += ["--tweakClass gg.essential.loader.stage0.EssentialSetupTweaker"]
+    clientRunArgs += ["--tweakClass gg.essential.loader.stage0.EssentialSetupTweaker", "--mixin mixins.weikowoaddons.json"]
+}
+
+mixin {
+    disableRefMapWarning = true
+    defaultObfuscationEnv searge
+    add sourceSets.main, "mixins.weikowoaddons.refmap.json"
 }
 
 configurations {
@@ -45,10 +51,10 @@ configurations {
 }
 
 repositories {
-    maven { url 'https://repo.spongepowered.org/maven/' }
     maven { url "https://repo.essential.gg/repository/maven-public" }
     maven { url "https://repo.sk1er.club/repository/maven-public" }
     maven { url "https://repo.sk1er.club/repository/maven-releases/" }
+    maven { url "https://repo.spongepowered.org/repository/maven-public/" }
     flatDir {
         dirs 'deps'
     }
@@ -60,8 +66,14 @@ dependencies {
 //    compile('org.spongepowered:mixin:0.7.11-SNAPSHOT')
 //    annotationProcessor('org.spongepowered:mixin:0.7.11-SNAPSHOT')
     //implementation("gg.essential:elementa-1.8.9-forge:476")
+    implementation('com.github.jagrosh:DiscordIPC:e29d6d8') {
+        exclude module: 'log4j'
+        because 'Different version conflicts with Minecraft\'s Log4J'
+    }
     packageLib("gg.essential:loader-launchwrapper:1.1.1")
     implementation("gg.essential:essential-1.8.9-forge:1498")
+    annotationProcessor("org.spongepowered:mixin:0.7.11-SNAPSHOT")
+    implementation("org.spongepowered:mixin:0.7.11-SNAPSHOT")
 //    implementation("gg.essential:vigilance-1.8.9-forge:218+pull-48")
 }
 
@@ -76,7 +88,7 @@ jar {
     manifest.attributes(
             /*'Main-Class': 'NotSkyblockAddonsInstallerFrame',*/
 //            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-//            'MixinConfigs': "mixins.${modid}.json",
+            'MixinConfigs': "mixins.${modid}.json",
             'FMLCorePluginContainsFMLMod': true,
             "ForceLoadAsMod": true,
             //"FMLAT": 'notenoughupdates_at.cfg'

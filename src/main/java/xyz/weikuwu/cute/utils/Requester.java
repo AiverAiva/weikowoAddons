@@ -1,17 +1,13 @@
 package xyz.weikuwu.cute.utils;
 
-import org.apache.commons.io.IOUtils;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.concurrent.ExecutionException;
-
 public class Requester {
 
-    public static String uuid = new String();
-
+//    private static final int FAILS_BEFORE_SWITCH = 3;
+//    private int currentUrl = 0;
+//    private long lastPrimaryUrl = 0;
+//
+//    public static String uuid = new String();
+//    private static ExecutorService es = Executors.newFixedThreadPool(3);
 
 //    @SubscribeEvent
 //    public void onTick(TickEvent.ClientTickEvent event) {
@@ -23,13 +19,29 @@ public class Requester {
 //    }
 
 //    private static final Set<CompletableFuture<String>> a = new HashSet<>();
-    public static String getUUID(String ign) throws InterruptedException, ExecutionException, IOException {
-        URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + ign);
-        URLConnection con = url.openConnection();
-        InputStream in = con.getInputStream();
-        String encoding = con.getContentEncoding();  // ** WRONG: should use "con.getContentType()" instead but it returns something like "text/html; charset=UTF-8" so this value must be parsed to extract the actual encoding
-        encoding = encoding == null ? "UTF-8" : encoding;
-        return IOUtils.toString(in, encoding);
+//    public static void funRun() {
+//        es.submit(() -> {
+//            try {
+//                getUUID("uwuweiku");
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        });
+//    }
+//
+//    public static String getUUID(String ign) throws InterruptedException, ExecutionException, IOException {
+//        URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + ign);
+//        URLConnection connection = url.openConnection();
+//        connection.setConnectTimeout(10000);
+//        connection.setReadTimeout(10000);
+
+        //        URLConnection con = url.openConnection();
+//        InputStream in = con.getInputStream();
+//        String encoding = con.getContentEncoding();  // ** WRONG: should use "con.getContentType()" instead but it returns something like "text/html; charset=UTF-8" so this value must be parsed to extract the actual encoding
+//        encoding = encoding == null ? "UTF-8" : encoding;
+        //IOUtils.toString(in, encoding);
+//        ChatLib.Log(IOUtils.toString(connection.getInputStream(), StandardCharsets.UTF_8));
+//        return IOUtils.toString(connection.getInputStream(), StandardCharsets.UTF_8);
 //        CompletableFuture.<String>supplyAsync(()->{
 //            try {
 //                return new BufferedReader(new InputStreamReader(new URL("https://api.mojang.com/users/profiles/minecraft/"+ign).openStream())).readLine();
@@ -61,5 +73,5 @@ public class Requester {
 //        }).start();
 //        a.add(completableFuture);
 //        return ign;
-    }
+
 }

@@ -20,15 +20,72 @@ public class Config extends Vigilant {
     }
     public String uuid = new String();
 
+
+    //party command
+    //(WIP)
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "Party Commands",
+//            description = "Enable Party Commands",
+//            category = "Party Command"
+//    )
+//    public boolean partycommand = false;
+//
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "Warp",
+//            description = "anyone in the party who !warp will trigger u to /p warp",
+//            category = "Party Command"
+//    )
+//    public boolean partywarp = false;
+
+    //Misc
+    @Property(
+            type = PropertyType.SWITCH,
+            name = "Auto Join Skyblock",
+            description = "Auto /play skyblock when u login hypixel (Required to be in a guild with MOTD)",
+            category = "Misc"
+    )
+    public boolean autojoinskyblock = false;
+
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "DiscordRPC",
+//            description = "the own discord rich presence of this mod(thanks sba for some useful code :D)",
+//            category = "Rich Presence"
+//    )
+//    public boolean enableDiscordRPC = true;
+
+    //Render
+    @Property(
+            type = PropertyType.SWITCH,
+            name = "Damage Comma",
+            description = "turn 1,123,123 into 1.1m, etc.",
+            category = "Render",
+            subcategory = "Damage"
+    )
+    public boolean damagecomma = false;
+
+
     //DungeonUtils
     @Property(
             type = PropertyType.SWITCH,
             name = "Auto Extra Stats",
             description = "do /showextrastats automatically after the dungeon ends.",
-            category = "Dungeon",
-            subcategory = "Utils"
+            category = "Utils",
+            subcategory = "Dungeon"
     )
     public boolean showextrastats = true;
+
+//    @Property(
+//            type = PropertyType.SWITCH,
+//            name = "Auto /immuted",
+//            description = "do /immuted when someone message you",
+//            category = "Utils",
+//            subcategory = "Chat"
+//    )
+//    public boolean autoimmuted = false;
+//    public boolean muted = false;
 
     //General Settings
     @Property(
@@ -37,7 +94,8 @@ public class Config extends Vigilant {
             description = "the API key is used to request player data from hypixel APIs",
             category = "Settings",
             subcategory = "API Key",
-            placeholder = "< API Key >"
+            placeholder = "< API Key >",
+            protectedText = true
     )
     public String APIKey = "";
 
@@ -53,8 +111,8 @@ public class Config extends Vigilant {
         ChatLib.Send("/api new");
         Minecraft.getMinecraft().thePlayer.closeScreen();
     }
-//
-//    //owoKicker
+
+    //owoKicker
 //    @Property(
 //            type = PropertyType.SWITCH,
 //            name = "Enable Autokick",
@@ -62,7 +120,7 @@ public class Config extends Vigilant {
 //            subcategory = "General Settings"
 //    )
 //    public boolean autokick = false;
-//
+
 //    @Property(
 //            type = PropertyType.SWITCH,
 //            name = "Send Kick Reason in Party Chat",

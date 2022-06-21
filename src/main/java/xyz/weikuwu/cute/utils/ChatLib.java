@@ -1,6 +1,7 @@
 package xyz.weikuwu.cute.utils;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.login.server.S02PacketLoginSuccess;
 import net.minecraft.util.ChatComponentText;
 
 public class ChatLib {
