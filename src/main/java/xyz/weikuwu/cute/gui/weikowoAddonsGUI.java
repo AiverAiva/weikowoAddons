@@ -52,26 +52,8 @@ public class weikowoAddonsGUI extends GuiScreen {
         tessellator.draw();
         GlStateManager.enableTexture2D();
         glFrontFace(GL_CCW);
-//        this.mc.getTextureManager().bindTexture(iconImage);
-//        drawTexturedModalRect(40, 35, 135, 35);
         GlStateManager.disableBlend();
         GlStateManager.enableAlpha();
-    }
-
-
-    private void drawTexturedModalRect(int startX, int startY, int textureWidth, int textureHeight) {
-        Tessellator tessellator = Tessellator.getInstance();
-        WorldRenderer renderer = tessellator.getWorldRenderer();
-        renderer.begin(7, DefaultVertexFormats.POSITION_TEX);
-        renderer.pos(startX, (startY + textureHeight), this.zLevel)
-                .tex(0, 1).endVertex();
-        renderer.pos((startX + textureWidth), (startY + textureHeight), this.zLevel)
-                .tex(1, 1).endVertex();
-        renderer.pos((startX + textureWidth), startY, this.zLevel)
-                .tex(1, 0).endVertex();
-        renderer.pos(startX, startY, this.zLevel)
-                .tex(0, 0).endVertex();
-        tessellator.draw();
     }
 
     @Override

@@ -140,8 +140,8 @@ processResources
 
 task moveResources {
     doLast {
-        /*ant.move file: "${buildDir}/resources/main",
-                todir: "${buildDir}/classes/java"*/
+        ant.move file: "${buildDir}/resources/main",
+                todir: "${buildDir}/classes/java"
     }
 }
 moveResources.dependsOn processResources

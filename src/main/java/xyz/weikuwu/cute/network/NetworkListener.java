@@ -14,6 +14,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class NetworkListener {
+
 //    public final static DiscordRPC discordRPC = new DiscordRPC();
 //
 //    public NetworkListener() {
